@@ -30,7 +30,7 @@ export default function HowItWorks() {
     <section id="how-it-works" className="py-20 md:py-32">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-foreground md:text-5xl">How it works</h2>
+          <h2 className="text-3xl font-bold text-foreground md:text-5xl">Working as name</h2>
           <p className="mt-4 text-muted">
             Lock away your memories until the moment that matters.
           </p>

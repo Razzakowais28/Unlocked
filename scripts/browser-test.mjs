@@ -32,8 +32,8 @@ async function main() {
     const createCta = await page.getByRole("link", { name: /create your capsule/i }).first().isVisible();
     log("Landing: Create your capsule CTA", createCta);
     await page.locator("#how-it-works").scrollIntoViewIfNeeded();
-    const howItWorks = await page.getByRole("heading", { name: "How it works" }).isVisible();
-    log("Landing: How it works section", howItWorks);
+    const howItWorks = await page.getByRole("heading", { name: "Working as name" }).isVisible();
+    log("Landing: Working as name section", howItWorks);
     await page.locator("#features").scrollIntoViewIfNeeded();
     const features = await page.getByRole("heading", { name: "Everything you need" }).isVisible();
     log("Landing: Features section", features);

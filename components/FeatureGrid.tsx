@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import {
   Shield,
-  Film,
   Link2,
   Users,
   Bell,
@@ -15,7 +14,6 @@ import GlassCard from "./GlassCard";
 
 const features = [
   { icon: Shield, title: "Private by design", description: "Locked until your chosen date. Production encryption can be added later." },
-  { icon: Film, title: "AI memory movie", description: "Turn your capsule into a cinematic memory reel. Coming soon." },
   { icon: Link2, title: "Share countdown link", description: "Share a countdown. Keep the memories hidden." },
   { icon: Users, title: "Collaborate with others", description: "Build capsules together with family and friends." },
   { icon: Bell, title: "Reminders & notifications", description: "Get notified when unlock day approaches." },
