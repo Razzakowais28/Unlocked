@@ -112,6 +112,24 @@ npx prisma studio         # Open database GUI
 - PostgreSQL for production
 - Push notifications
 
+## Deployment
+
+### GitHub Pages (not supported for the full app)
+
+GitHub Pages only serves static files. It **cannot** run this Next.js app (API routes, login, database, uploads). If you enable GitHub Pages on the `main` branch, you will only see the README or a static landing page — not the real app.
+
+The repo includes a root `index.html` that explains this and links to Vercel.
+
+### Deploy the full app on Vercel (recommended, free)
+
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com) and sign in with GitHub
+3. Click **Add New → Project** and import `Razzakowais28/Unlocked`
+4. Click **Deploy** (defaults work — `vercel.json` is included)
+5. Open your live URL (e.g. `https://unlocked.vercel.app`)
+
+**Note:** The app uses SQLite locally. For a fully working live app (login, capsules, uploads), you will eventually need PostgreSQL and cloud storage on Vercel/Render. The landing page and UI will deploy immediately.
+
 ## License
 
 MIT

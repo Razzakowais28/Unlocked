@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unlocked — A message meant for the future</title>
+    <meta
+      name="description"
+      content="Unlocked is a digital time capsule app. GitHub Pages only hosts this landing page — the full app runs on Vercel."
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        min-height: 100vh;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #0b0b14;
+        color: #f4f4f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+      .card {
+        max-width: 560px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 1.25rem;
+        padding: 2.5rem;
+        text-align: center;
+        backdrop-filter: blur(12px);
+      }
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 0.75rem;
+        background: linear-gradient(135deg, #8b5cf6, #a855f7);
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+      }
+      h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 0.75rem;
+      }
+      .gradient {
+        background: linear-gradient(90deg, #c4b5fd, #f472b6);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      p {
+        color: #a1a1aa;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+      .actions {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+      }
+      a {
+        display: inline-block;
+        text-decoration: none;
+        border-radius: 0.875rem;
+        padding: 0.875rem 1.25rem;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+      .primary {
+        background: linear-gradient(135deg, #8b5cf6, #ec4899);
+        color: white;
+      }
+      .secondary {
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: #f4f4f5;
+        background: rgba(255, 255, 255, 0.04);
+      }
+      .note {
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+        color: #71717a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="logo">🔒</div>
+      <h1>A message meant for the <span class="gradient">future</span>.</h1>
+      <p>
+        This repository contains the Unlocked time capsule app. GitHub Pages can only show
+        static pages like this one — it cannot run the full Next.js app with login, database,
+        and file uploads.
+      </p>
+      <p>To use the real app, deploy it on Vercel (free).</p>
+      <div class="actions">
+        <a
+          class="primary"
+          href="https://vercel.com/new/clone?repository-url=https://github.com/Razzakowais28/Unlocked"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Deploy on Vercel
+        </a>
+        <a
+          class="secondary"
+          href="https://github.com/Razzakowais28/Unlocked"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View source on GitHub
+        </a>
+      </div>
+      <p class="note">
+        After deploying, open your Vercel URL (e.g. unlocked.vercel.app) to use the app.
+      </p>
+    </div>
+  </body>
+</html>
