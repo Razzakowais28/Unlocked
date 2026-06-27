@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Unlocked
+
+**A message meant for the future.**
+
+Unlocked is a digital time capsule platform where users create capsules, add memories, lock them until a future date, share countdown links, and open them only when the unlock date arrives.
+
+## Tech Stack
+
+- **Next.js** (App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- **Prisma** + **SQLite**
+- **React Hook Form** + **Zod**
+- **Framer Motion**
+- **Lucide React**
+- **date-fns**
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Setup
 
 ```bash
+# Install dependencies
+npm install
+
+# Run database migrations
+npx prisma migrate dev
+
+# Seed demo data
+npm run db:seed
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Demo Login
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Use the demo account after seeding:
 
-## Learn More
+- **Name:** owais
+- **Email:** owaisrak28@gmail.com
 
-To learn more about Next.js, take a look at the following resources:
+Go to `/login` and sign in with these credentials (no password required for MVP).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## App Routes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Route | Description |
+|-------|-------------|
+| `/` | Landing page |
+| `/login` | Demo authentication |
+| `/dashboard` | User dashboard |
+| `/capsules/new` | Multi-step capsule creation |
+| `/capsules/[id]/edit` | Edit capsule |
+| `/capsules/[id]/preview` | Preview and lock capsule |
+| `/c/[slug]` | Public countdown page |
+| `/c/[slug]/open` | Unlocked capsule experience |
+| `/pricing` | Pricing plans |
 
-## Deploy on Vercel
+## API Routes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | `/api/auth` | Login / register |
+| DELETE | `/api/auth` | Logout |
+| GET | `/api/capsules` | List user capsules |
+| GET | `/api/capsules?slug=` | Get capsule by share slug |
+| POST | `/api/capsules` | Create capsule |
+| GET | `/api/capsules/[id]` | Get capsule by ID |
+| PATCH | `/api/capsules/[id]` | Update capsule |
+| DELETE | `/api/capsules/[id]` | Delete capsule |
+| POST | `/api/upload` | Upload file (local) |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Local File Uploads
+
+Uploaded files are saved to `public/uploads/` for demo purposes. This is **local-only** and files are stored on the filesystem. For production, use object storage (S3, R2, etc.).
+
+## Database
+
+SQLite is used for local development. The database file is created at `dev.db` in the project root after running migrations.
+
+### Commands
+
+```bash
+npx prisma migrate dev    # Run migrations
+npm run db:seed           # Seed demo data
+npx prisma studio         # Open database GUI
+```
+
+## Security Notes
+
+- MVP uses simple cookie-based demo auth (no passwords)
+- Capsule content is hidden on public pages until unlock date
+- UI uses "Private by design" — production encryption can be added later
+- Do not claim end-to-end encryption is fully implemented
+
+## Future Improvements
+
+- Real authentication (OAuth, email magic links)
+- Object storage for media (S3/R2)
+- End-to-end encryption
+- AI Memory Movie generation
+- Email reminders before unlock date
+- Family sharing and collaboration
+- Payment integration (Stripe)
+- PostgreSQL for production
+- Push notifications
+
+## License
+
+MIT
